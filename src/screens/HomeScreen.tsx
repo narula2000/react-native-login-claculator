@@ -13,7 +13,7 @@ type Props = {
 const HomeScreen = ({ navigation }: Props) => (
   <Background>
     <Logo />
-    <Header>Welcome to CcuLaTor</Header>
+    <Header>Welcome to CumcuLaTor</Header>
     <Paragraph>please select one of these options</Paragraph>
     <Button mode="contained" onPress={() => navigation.navigate('LoginScreen')}>
       Login

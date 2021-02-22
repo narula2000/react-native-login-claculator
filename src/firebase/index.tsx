@@ -17,6 +17,4 @@ const firebaseConfig = {
   appId: FIREBASE_APP_ID,
 };
 
-console.log(FIREBASE_API_KEY);
-
 export default firebaseConfig;
