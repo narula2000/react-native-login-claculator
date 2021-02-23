@@ -47,7 +47,8 @@ const Calculator = ({ mode, style, children, ...props }: Props) => {
       });
     } else if (operation === 'Del') {
       setState({
-        display: state.display.slice(0, -1),
+        display:
+          state.display.slice(0, -1) === '' ? '0' : state.display.slice(0, -1),
         result: '',
       });
     } else {
