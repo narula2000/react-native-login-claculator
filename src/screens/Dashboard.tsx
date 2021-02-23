@@ -11,9 +11,7 @@ type Props = {
 
 const Dashboard = ({ navigation }: Props) => (
   <Background>
-    <View>
       <Calculator />
-    </View>
     <Button mode="outlined" onPress={() => navigation.navigate('HomeScreen')}>
       Logout
     </Button>

@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
   },
   numbers: {
     flex: 3,
+    backgroundColor: '#141d26',
   },
   operations: {
     flex: 1,

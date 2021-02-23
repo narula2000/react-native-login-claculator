@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    maxWidth: 300,
-    minWidth: 300,
+    maxWidth: 350,
+    minWidth: 350,
   },
   button: {
     width: '100%',
