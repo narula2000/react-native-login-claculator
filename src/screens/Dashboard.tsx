@@ -9,12 +9,6 @@ type Props = {
   navigation: Navigation;
 };
 
-const styles = StyleSheet.create({
-  drawerPaper: {
-    backgroundColor: 'red',
-  },
-});
-
 const Dashboard = ({ navigation }: Props) => (
   <Background>
     <View>

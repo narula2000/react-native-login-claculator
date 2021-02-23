@@ -53,7 +53,9 @@ const LoginScreen = ({ navigation }: Props) => {
       .auth()
       .signInWithEmailAndPassword(email.value, password.value)
       .then(() => navigation.navigate('Dashboard'))
-      .catch((err) => alert(err));
+      .catch((err) =>
+        alert('This is an invalid email or the user have been deleted.')
+      );
   };
 
   return (
