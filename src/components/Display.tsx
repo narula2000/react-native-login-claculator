@@ -1,11 +1,10 @@
 import React, { memo } from 'react';
 import { View, SafeAreaView, StyleSheet, Text } from 'react-native';
-import colors from './Colors';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.dark,
+    backgroundColor: '#1b2836',
     justifyContent: 'space-around',
     paddingHorizontal: 24,
   },
@@ -16,12 +15,12 @@ const styles = StyleSheet.create({
   display: {
     textAlign: 'right',
     fontWeight: 'bold',
-    color: colors.white,
+    color: '#ffffff',
     fontSize: 40,
   },
   result: {
     textAlign: 'right',
-    color: colors.white,
+    color: '#ffffff',
     fontSize: 30,
   },
 });

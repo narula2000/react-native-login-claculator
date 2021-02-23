@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import { TouchableOpacity, StyleSheet, Text } from 'react-native';
-import colors from './Colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,7 +9,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 30,
-    color: colors.white,
+    color: '#ffffff',
   },
 });
 

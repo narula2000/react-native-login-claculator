@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { View, SafeAreaView, StyleSheet } from 'react-native';
 import Button from './CalcButton';
-import colors from './Colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,7 +16,7 @@ const styles = StyleSheet.create({
   },
   operations: {
     flex: 1,
-    backgroundColor: colors.orange,
+    backgroundColor: '#f6993f',
   },
 });
 
