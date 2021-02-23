@@ -32,7 +32,17 @@ const Calculator = ({ mode, style, children, ...props }: Props) => {
     return String(parseFloat(val).toFixed(2));
   };
 
-  const invalid = ['÷', '×', '-', '+', '0'];
+  const displayChecker = (operation, display) => {
+    const invalid = ['÷', '×', '0'];
+
+    if (invalid.includes(display)) {
+      if (invalid.includes(operation)) {
+        return '0';
+      }
+      return operation;
+    }
+    return display + operation;
+  };
 
   const handleOperation = (operation) => {
     if (operation === 'C') {
@@ -42,7 +52,7 @@ const Calculator = ({ mode, style, children, ...props }: Props) => {
       });
     } else if (operation === '=') {
       setState({
-        display: state.result,
+        display: state.result === '' ? state.display : state.result,
         result: '',
       });
     } else if (operation === 'Del') {
@@ -52,9 +62,7 @@ const Calculator = ({ mode, style, children, ...props }: Props) => {
         result: '',
       });
     } else {
-      const display = invalid.includes(state.display)
-        ? operation
-        : state.display + operation;
+      const display = displayChecker(operation, state.display);
       let { result } = state;
       try {
         let fixedOperation = display.split('×').join('*');
