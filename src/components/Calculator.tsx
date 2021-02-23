@@ -28,6 +28,12 @@ const styles = StyleSheet.create({
 const Calculator = ({ mode, style, children, ...props }: Props) => {
   const [state, setState] = useState({ display: '0', result: '' });
 
+  const rounder4 = (val: string) => {
+    return String(parseFloat(val).toFixed(2));
+  };
+
+  const invalid = ['÷', '×', '-', '+', '0'];
+
   const handleOperation = (operation) => {
     if (operation === 'C') {
       setState({
@@ -40,15 +46,16 @@ const Calculator = ({ mode, style, children, ...props }: Props) => {
         result: '',
       });
     } else {
-      const display =
-        state.display === '0' ? operation : state.display + operation;
+      const display = invalid.includes(state.display)
+        ? operation
+        : state.display + operation;
       let { result } = state;
       try {
         let fixedOperation = display.split('×').join('*');
         fixedOperation = fixedOperation.split('÷').join('/');
         fixedOperation = fixedOperation.split(',').join('.');
 
-        result = String(eval(fixedOperation));
+        result = rounder4(String(eval(fixedOperation)));
       } catch (err) {
         console.log(err);
       }
