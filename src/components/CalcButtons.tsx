@@ -32,7 +32,7 @@ const Buttons = (props) => {
     ['1', '2', '3'],
     ['.', '0', '='],
   ];
-  const operations = ['C', '÷', '×', '-', '+'];
+  const operations = ['C', '÷', '×', '-', '+', 'Del'];
 
   return (
     <View style={styles.container}>

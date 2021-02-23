@@ -45,6 +45,11 @@ const Calculator = ({ mode, style, children, ...props }: Props) => {
         display: state.result,
         result: '',
       });
+    } else if (operation === 'Del') {
+      setState({
+        display: state.display.slice(0, -1),
+        result: '',
+      });
     } else {
       const display = invalid.includes(state.display)
         ? operation
