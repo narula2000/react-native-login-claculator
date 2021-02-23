@@ -26,12 +26,12 @@ const styles = StyleSheet.create({
 });
 
 const Calculator = ({ mode, style, children, ...props }: Props) => {
-  const [state, setState] = useState({ display: '', result: '' });
+  const [state, setState] = useState({ display: '0', result: '' });
 
   const handleOperation = (operation) => {
     if (operation === 'C') {
       setState({
-        display: '',
+        display: '0',
         result: '',
       });
     } else if (operation === '=') {
@@ -40,7 +40,8 @@ const Calculator = ({ mode, style, children, ...props }: Props) => {
         result: '',
       });
     } else {
-      const display = state.display + operation;
+      const display =
+        state.display === '0' ? operation : state.display + operation;
       let { result } = state;
       try {
         let fixedOperation = display.split('×').join('*');

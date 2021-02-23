@@ -49,12 +49,11 @@ const LoginScreen = ({ navigation }: Props) => {
       return;
     }
 
-    navigation.navigate('Dashboard');
-    // firebase
-    //   .auth()
-    //   .signInWithEmailAndPassword(email.value, password.value)
-    //   .then(() => navigation.navigate('Dashboard'))
-    //   .catch((err) => alert(err));
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email.value, password.value)
+      .then(() => navigation.navigate('Dashboard'))
+      .catch((err) => alert(err));
   };
 
   return (
