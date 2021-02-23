@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Calculator } from 'react-native-calculator';
+import Calculator from '../components/Calculator';
 import Background from '../components/Background';
 import Button from '../components/Button';
 import { Navigation } from '../types';
@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
 
 const Dashboard = ({ navigation }: Props) => (
   <Background>
-    <View style={{ flex: 1, flexDirection: 'row' }}>
-      <Calculator style={{ flex: 1, flexDirection: 'row' }} />
+    <View>
+      <Calculator />
     </View>
     <Button mode="outlined" onPress={() => navigation.navigate('HomeScreen')}>
       Logout
