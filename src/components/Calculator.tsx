@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
 const Calculator = ({ mode, style, children, ...props }: Props) => {
   const [state, setState] = useState({ display: '0', result: '' });
 
-  const rounder4 = (val: string) => {
+  const rounder = (val: string) => {
     return String(parseFloat(val).toFixed(2));
   };
 
@@ -69,7 +69,7 @@ const Calculator = ({ mode, style, children, ...props }: Props) => {
         fixedOperation = fixedOperation.split('÷').join('/');
         fixedOperation = fixedOperation.split(',').join('.');
 
-        result = rounder4(String(eval(fixedOperation)));
+        result = rounder(String(eval(fixedOperation)));
       } catch (err) {
         console.log(err);
       }
